@@ -1,4 +1,7 @@
+import { Routes, Route } from 'react-router-dom'
 import Header from "./components/Header"
+import './index.css'
+import Register from './Pages/Register'
 
 function App() {
   return (
@@ -6,6 +9,9 @@ function App() {
       <div>
         <Header />
       </div>
+        <Routes>
+            <Route path="/register" element={ <Register /> } /> 
+        </Routes>
     </div>
   )
 }
