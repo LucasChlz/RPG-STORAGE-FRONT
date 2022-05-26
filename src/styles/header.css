@@ -1,0 +1,27 @@
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+header li {
+    list-style-type: none;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+header li a {
+    text-decoration: none;
+    color: white;
+}
+
+.container {
+    background-color: #4C5270;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
