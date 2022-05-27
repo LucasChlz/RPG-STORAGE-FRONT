@@ -1,0 +1,12 @@
+.formContainer {
+    width: 30%;
+    border-top-left-radius: 20px;
+    position: relative;
+    top: 20px;
+    height: 90vh;
+    background-color: white;
+    float: right;
+    box-shadow: -5px 0px 9px -1px rgba(0,0,0,0.78);
+    -webkit-box-shadow: -5px 0px 9px -1px rgba(0,0,0,0.78);
+    -moz-box-shadow: -5px 0px 9px -1px rgba(0,0,0,0.78);
+}
