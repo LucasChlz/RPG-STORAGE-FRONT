@@ -1,6 +1,34 @@
 import '../styles/register.css'
+import React from 'react';
+import axios from 'axios';
 
 const Register = () => {
+
+    const [name, setName] = React.useState("");
+    const [email, setEmail] = React.useState("");
+    const [password, setPassword] = React.useState("");
+    const [messa, setMessa] = React.useState("");
+
+    const handlesubmit = async e => {
+        e.preventDefault();
+        console.log(name);
+        console.log(email);
+        console.log(password);
+
+        await sendData(name,email,password)
+    }
+
+    const sendData = async (name, email, password) => {
+        const newUser = {
+            name: name,
+            email: email,
+            password: password
+        }
+        const response = await axios.post('http://localhost:8080/user/create', newUser);
+        console.log(response.data.message);
+        setMessa(response.data.message);
+    }
+
       
     return (
         <div className='container'>
@@ -15,21 +43,21 @@ const Register = () => {
         </div>
             <div className='container-form'>
                 <h1>CREATE YOUR ACCOUNT</h1>
-                <form>
+                <form onSubmit={handlesubmit}>
                     <div className='div-input'>
                         <label>Name</label>
-                        <input type='text'></input>
+                        <input type='text' value={name} onChange={e => setName(e.target.value)}></input>
                     </div>
                     <div className='div-input'>
                         <label>Email</label>
-                        <input type='email'></input>
+                        <input type='email' value={email} onChange={e => setEmail(e.target.value)}></input>
                     </div>
                     <div className='div-input'>
                         <label>Password</label>
-                        <input type='password'></input>
+                        <input type='password' value={password} onChange={e => setPassword(e.target.value)}></input>
                     </div>
                     <div className='input-button'>
-                        <input type="button" value="SIGN UP"></input>
+                        <input type="submit" value="SIGN UP"></input>
                     </div>
                 </form>
             </div>
