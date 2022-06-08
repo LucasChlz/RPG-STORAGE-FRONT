@@ -9,13 +9,13 @@ const Form = () => {
     const [password, setPassword] = React.useState("");
     const [messa, setMessa] = React.useState("");
 
-    const handlesubmit = e => {
+    const handlesubmit = async e => {
         e.preventDefault();
         console.log(name);
         console.log(email);
         console.log(password);
 
-        sendData(name,email,password)
+        await sendData(name,email,password)
     }
 
     const sendData = async (name, email, password) => {
@@ -30,27 +30,7 @@ const Form = () => {
     }
 
     return (
-        <div className='formContainer'>
-            <h1>{messa}</h1>
-            <h1>SIGN UP</h1>  
-            <form onSubmit={handlesubmit}>
-                <div className='ContainerInput'>
-                    <label>Name: </label>
-                    <input type='text' placeholder='name...' value={name} onChange={e => setName(e.target.value)} />
-                </div>
-                <div className='ContainerInput'>
-                    <label>Email: </label>
-                    <input type='text' placeholder='email...' value={email} onChange={e => setEmail(e.target.value)} />
-                </div>
-                <div className='ContainerInput'>
-                    <label>Password: </label>
-                    <input type='text' placeholder='password...' value={password} onChange={e => setPassword(e.target.value)} />
-                </div> 
-                <div className='ContainerInput'>
-                    <input type='submit' value='Create' />
-                </div>
-            </form> 
-        </div>
+        <div></div>
     )
 }
 
