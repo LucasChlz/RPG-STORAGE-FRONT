@@ -1,105 +1,129 @@
-:root {
-    --bg-principal: #363646;
-    --grenn: #81DA62;
+.container-register {
+    margin: 0 auto;
+    padding-top: 50px;
+    max-width: 1100px;
+    max-height: 700px;
+  
 }
 
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}   
-
-.clear {
-    clear: both;
+.bg-register {
+    position: relative;
+    z-index: 0;
+    background-color: red;
+    background-position: center;
+    width: 512px;
+    height: 512px;
 }
 
-body {
-    background-color: var(--bg-principal);
-    height: 100%;
-}
-
-.bg {
-    display: flex;
-    height: 100%;
-    padding-left: 50px;
-}
-
-.bg-image {
-    position: absolute;
-    bottom: 0px;
-}
-
-.container-form {
-    width: 414px;
-    height: 540px;
-    background-color: white;
+.form-register {
+    position: relative;
     float: right;
-    margin-top: 50px;
-    margin-right: 50px;
-    border-radius: 55px;
-}
-
-.container-form h1 {
-    text-align: center;
-    font-size: 22px;
-    margin-top: 20px;
-}
-
-.div-input {
-    margin-top: 45px;
-    padding-left: 30px;
-    padding-right: 30px;
-}
-
-.div-input label {
-    font-size: 20px;
-}
-
-.div-input input[type=text],
-.div-input input[type=email],
-.div-input input[type=password] {
-    width: 100%;
-    height: 35px;
-    margin-top: 10px;
-    border-radius: 20px;
-    border: 1px solid black;
-    padding: 0 2%;
-}
-
-
-.input-button input[type=submit] {
-    margin-top: 60px;
-    width: 100%;
-    height: 126px;
-    border-bottom-left-radius: 55px;
-    border-bottom-right-radius: 55px;
-    border: 0;
-    background-color: var(--grenn);
-    cursor: pointer;
-    font-size: 25px;
-}
-
-.content {
+    background: rgb(255, 255, 255);
+    padding: 30px;
     width: 400px;
+    height: 500px;
+}
+
+.form-register:before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(154deg, #94edec 50%, #5b3cfc 60% );
+    transform: translate3d(0px, 0px, 0) scale(1.09);
+    filter: blur(18px);
+    opacity: var(0.65);
+    transition: opacity 0.3s;
+}
+
+/* 
+* Prevents issues when the parent creates a 
+* stacking context. (For example, using the transform
+* property )
+*/
+
+.form-register,
+.form-register::before,
+.form-register::after{
+  border-radius: 20px;
+}
+
+.form-register::after {    
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: inherit;
+}
+
+
+.form-register span {
+    text-align: center;
+    display: block;
+    font-size: 25px;
+    color: black;
+}
+
+.form-register > .input-register input[type=text],
+.form-register > .input-register input[type=email],
+.form-register > .input-register input[type=password]{
+    width: 390px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 17px;
+    border: 1px solid black;
+}
+
+.form-register > .input-register {
+    margin-top: 40px;
+}
+
+.form-register > .input-register label {
+    padding: 2% 2%;
+    font-weight: bold;
+    display: block;
+}
+
+.form-register > .submit-register input[type=submit] {
+    border: 0;
     color: white;
-    position: absolute;
-    top: 150px;
-    left: 260px;
+    cursor: pointer;
+    background-color: #5b3cfc;
+    margin-top: 30px;
+    width: 400px;
+    height: 50px;
+    border-radius: 20px;
+    transition: 0.5s;
 }
 
-.content h1:nth-child(2) {
-    position: absolute;
-    left: 150px;
+.form-register > .submit-register input[type=submit]:hover {
+    transition: 0.5s;
+    background-color: #452cc5;
 }
 
-.content h1:nth-child(3) {
-    position: absolute;
-    top: 100px;
-    left: 150px;
-}
-.content h1:nth-child(4) {
-    position: absolute;
-    top: 150px;
-    left: 150px;
+.content-register {
+    position: relative;
+    float: left;
+    margin-top: 80px;
+    width: 400px;
+    height: 400px;
 }
 
+.content-register p {
+    color: black;
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.content-text {
+    width: 200px;
+    position: relative;
+    bottom: 240px;
+    left: 300px;
+}

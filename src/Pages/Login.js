@@ -1,8 +1,8 @@
-import '../styles/register.css'
+import '../styles/login.css'
 import React from 'react';
 import axios from 'axios';
 
-const Register = () => {
+const Login = () => {
 
     const [name, setName] = React.useState("");
     const [email, setEmail] = React.useState("");
@@ -28,37 +28,33 @@ const Register = () => {
         console.log(response.data.message);
         setMessa(response.data.message);
     }
-     
+
+      
     return (
-        <div className='container-register'>
-                <div className='content-register'>
-                    <div className='bg-image'>
-                        <img src={process.env.PUBLIC_URL + '/images/Logo.png'}></img>
-                    </div>
-                    <div className='content-text'>
-                        <p>Now you have a complete place to store your rpg characters</p>
-                    </div>
-                </div>
-                <form className='form-register'>
-                        <span>Create Your Account   </span>
-                    <div className='input-register'>
+       <div className='container-login'>
+           <div className='container-form-login'>
+                <h1>CREATE YOUR ACCOUNT</h1>
+                <form onSubmit={handlesubmit}>
+                    <div className='div-input-login'>
                         <label>Name</label>
                         <input type='text' value={name} onChange={e => setName(e.target.value)}></input>
                     </div>
-                    <div className='input-register'>
+                    <div className='div-input-login'>
                         <label>Email</label>
                         <input type='email' value={email} onChange={e => setEmail(e.target.value)}></input>
                     </div>
-                    <div className='input-register'>
+/                    <div className='div-input-login'>
                         <label>Password</label>
                         <input type='password' value={password} onChange={e => setPassword(e.target.value)}></input>
+                        <a href='http://localhost:3000/login'>already have an account ?</a>
                     </div>
-                    <div className='submit-register'>
+                    <div className='input-button-login'>
                         <input type="submit" value="SIGN UP"></input>
                     </div>
-                </form>      
-        </div>
+                </form>
+            </div>
+       </div>
     );
 }
 
-export default Register;
+export default Login;
